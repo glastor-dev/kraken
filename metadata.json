@@ -1,0 +1,5 @@
+{
+  "name": "OptiSnap - Frontend Image Optimizer & Converter",
+  "description": "A powerful image processing tool that optimizes, resizes, and converts images to WebP/AVIF directly in your browser. Note: AI rename (optional) sends the image to Gemini. Features batch processing and ZIP export.",
+  "requestFramePermissions": []
+}
