@@ -1,20 +1,69 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# kraken
 
-# Run and deploy your AI Studio app
+Optimiza y convierte imágenes directamente en el navegador (batch), con redimensionado, métricas de ahorro y descarga en ZIP. Incluye renombrado sugerido por IA (opcional) vía endpoint serverless para mantener tu API key fuera del frontend.
 
-This contains everything you need to run your app locally.
+[https://github.com/glastor-dev/kraken](https://github.com/glastor-dev/kraken)
 
-View your app in AI Studio: https://ai.studio/apps/drive/1lRydZxSvu9WHhnoz2pwcBvzs-GCpqMLt
+[![CI](https://github.com/glastor-dev/kraken/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/glastor-dev/kraken/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/glastor-dev/kraken/actions/workflows/codeql.yml/badge.svg?branch=master)](https://github.com/glastor-dev/kraken/actions/workflows/codeql.yml)
+[![License](https://img.shields.io/github/license/glastor-dev/kraken)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/glastor-dev/kraken?style=flat)](https://github.com/glastor-dev/kraken/stargazers)
+[![Issues](https://img.shields.io/github/issues/glastor-dev/kraken)](https://github.com/glastor-dev/kraken/issues)
+[![Last Commit](https://img.shields.io/github/last-commit/glastor-dev/kraken/master)](https://github.com/glastor-dev/kraken/commits/master)
 
-## Run Locally
+## Capturas
 
-**Prerequisites:**  Node.js
+![kraken - pendiente](assets/Kraken1.png)
+![kraken - completado](assets/Kraken2.png)
 
+## Features
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key (used by `/api/suggest-name`)
-3. Run the app:
-   `npm run dev`
+- Procesamiento en lote (batch) con estado por archivo y descarga en ZIP.
+- Conversión de formato (p. ej. WebP/AVIF/JPEG/PNG) y control de calidad.
+- Redimensionado previo para respetar `maxWidth` / `maxHeight`.
+- Vista previa y métricas de ahorro (tamaño original vs optimizado).
+- Renombrado sugerido por IA (opcional) vía `/api/suggest-name`.
+
+## Stack
+
+- Vite + React + TypeScript
+- `browser-image-compression` + `JSZip`
+- Vercel Functions (`/api/*`) para IA con Gemini (`@google/genai`)
+
+## Requisitos
+
+- Node.js 20+
+
+## Uso local
+
+1. Instalar dependencias:
+   - `npm install`
+2. Copiar `.env.example` a `.env.local` y completar tu clave (solo para dev / funciones serverless):
+   - `GEMINI_API_KEY=...`
+3. Ejecutar en desarrollo:
+   - `npm run dev`
+
+## Deploy en Vercel
+
+- El proyecto está preparado como SPA + Functions.
+- Configura `GEMINI_API_KEY` como variable de entorno en Vercel.
+- Luego despliega normalmente desde el repo.
+
+## Scripts
+
+- `npm run dev` — desarrollo
+- `npm run build` — build de producción
+- `npm run preview` — preview del build
+
+## Seguridad
+
+- No coloques `GEMINI_API_KEY` en el frontend.
+- El renombrado IA se resuelve en el servidor vía `/api/suggest-name`.
+
+## Contribuir
+
+Lee [CONTRIBUTING.md](CONTRIBUTING.md). Reportes y sugerencias en [Issues](https://github.com/glastor-dev/kraken/issues).
+
+## Licencia
+
+Ver [LICENSE](LICENSE).

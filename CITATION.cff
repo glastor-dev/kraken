@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "kraken"
+type: software
+version: "0.1.0"
+date-released: "2026-01-01"
+authors:
+  - family-names: "Cardoso"
+    given-names: "Andrés Antonio"
+    email: "glastor.info@gmail.com"
+repository-code: "https://github.com/glastor-dev/kraken"
+url: "https://github.com/glastor-dev/kraken"
+license: GPL-3.0-only
+keywords:
+  - React
+  - Vite
+  - TypeScript
+  - images
+  - image optimization
+  - image compression
+  - WebP
+  - AVIF
+  - Gemini
+abstract: "Frontend image optimizer and converter built with React, Vite, and TypeScript. Supports batch processing, resizing, ZIP export, and optional AI-based filename suggestions via Gemini."

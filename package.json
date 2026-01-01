@@ -2,6 +2,14 @@
   "name": "kraken",
   "private": true,
   "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glastor-dev/kraken.git"
+  },
+  "bugs": {
+    "url": "https://github.com/glastor-dev/kraken/issues"
+  },
+  "homepage": "https://github.com/glastor-dev/kraken#readme",
   "type": "module",
   "engines": {
     "node": ">=20"

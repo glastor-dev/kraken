@@ -285,14 +285,14 @@ export default function App() {
     const link = document.createElement('a');
     const zipUrl = URL.createObjectURL(content);
     link.href = zipUrl;
-    link.download = `optisnap_batch_${Date.now()}.zip`;
+    link.download = `kraken_batch_${Date.now()}.zip`;
     link.click();
 
     window.setTimeout(() => URL.revokeObjectURL(zipUrl), 0);
   };
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row bg-slate-50 text-slate-900 selection:bg-indigo-100">
+    <div className="min-h-screen flex flex-col md:flex-row bg-slate-200 text-slate-900 selection:bg-indigo-100">
       {/* Sidebar */}
       <aside className="w-full md:w-80 bg-white border-r border-slate-200 p-6 flex flex-col gap-8 overflow-y-auto z-20 shadow-xl shadow-slate-200/50">
         <div className="flex items-center gap-3">

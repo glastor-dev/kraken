@@ -3,6 +3,16 @@ import { GoogleGenAI } from '@google/genai';
 const PROMPT =
   'Suggest a short, descriptive, SEO-friendly filename (lowercase, hyphens, no extension) for this image based on its content. Return ONLY the string.';
 
+const getResponseText = async (response: any): Promise<string> => {
+  const t = response?.text;
+  if (typeof t === 'function') {
+    const v = await t.call(response);
+    return typeof v === 'string' ? v : String(v ?? '');
+  }
+
+  return typeof t === 'string' ? t : '';
+};
+
 const toSafeSlug = (text: string) => {
   const base = text
     .trim()
@@ -48,7 +58,8 @@ export default async function handler(req: any, res: any) {
       ],
     });
 
-    res.status(200).json({ name: toSafeSlug(response.text ?? '') });
+    const responseText = await getResponseText(response);
+    res.status(200).json({ name: toSafeSlug(responseText) });
   } catch (err: any) {
     res.status(500).json({ error: err?.message || 'AI naming failed' });
   }

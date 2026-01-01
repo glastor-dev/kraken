@@ -1,0 +1,18 @@
+# CODEOWNERS
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+# Proyecto: kraken
+
+# Dueño por defecto de todo el repo
+* @glastor-dev
+
+# Archivos de configuración y automatización
+.github/ @glastor-dev
+package.json @glastor-dev
+package-lock.json @glastor-dev
+tsconfig.json @glastor-dev
+vite.config.ts @glastor-dev
+vercel.json @glastor-dev
+
+# API serverless (Vercel)
+/api/ @glastor-dev
+
